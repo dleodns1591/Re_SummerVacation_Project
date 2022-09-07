@@ -21,7 +21,7 @@ public class Enemy_Spawner : MonoBehaviour
 
     private void Awake()
     {
-        
+        StartCoroutine(Spawn());
     }
 
     private IEnumerator Spawn()

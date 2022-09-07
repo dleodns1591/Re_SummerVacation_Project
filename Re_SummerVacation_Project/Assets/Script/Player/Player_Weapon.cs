@@ -17,8 +17,5 @@ public class Player_Weapon : MonoBehaviour
         transform.position += Weapon_Direction * Weapon_Speed * Time.deltaTime;
     }
 
-    public void MoveTo(Vector3 direction)
-    {
-        Weapon_Direction = direction;
-    }
+    public void MoveTo(Vector3 direction) => Weapon_Direction = direction;
 }

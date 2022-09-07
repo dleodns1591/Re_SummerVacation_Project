@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
         MoveTo(new Vector3(x, y, 0));
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
             StartCoroutine(Weapon_Instantiate());
     }
 
