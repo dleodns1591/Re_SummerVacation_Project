@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage_Data : MonoBehaviour
+[CreateAssetMenu]
+public class Stage_Data : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Vector2 limitMin;
+    public Vector2 limitMax;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Vector2 LimitMin => limitMin;
+    public Vector2 LimitMax => limitMax;
 }

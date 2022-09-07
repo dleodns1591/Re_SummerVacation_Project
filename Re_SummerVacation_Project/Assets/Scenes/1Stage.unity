@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fadc81c0f5652354984d4d4ba8abcbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScrollRange: 9.9
+  ScrollRange: 9.8
   MoveSpeed: 5
   Target: {fileID: 761395070}
   MoveDirection: {x: 0, y: -1, z: 0}
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fadc81c0f5652354984d4d4ba8abcbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScrollRange: 9.9
+  ScrollRange: 9.8
   MoveSpeed: 5
   Target: {fileID: 383260731}
   MoveDirection: {x: 0, y: -1, z: 0}
@@ -402,8 +402,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -593439769
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1083896706, guid: 4c061f19cc7293b4ca24c161967ad652, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -443,8 +443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d141aa9ea2b980f4b9ea646c1dccbb21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StageData: {fileID: 11400000, guid: 80899b03a7b146147ada6a44dab6aa1f, type: 2}
   Move_Speed: 7
   MoveDirection: {x: 0, y: 0, z: 0}
+  Weapon_Prefab: {fileID: 3880097028291264569, guid: 8e28e80de7065ff4e81d07092ff98648, type: 3}
+  Weapon_Speed: 0.2
 --- !u!1 &1639970674
 GameObject:
   m_ObjectHideFlags: 0
