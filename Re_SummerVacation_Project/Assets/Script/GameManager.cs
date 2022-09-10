@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Inst { get; private set; }
+    void Awake() => Inst = this;
+
+
+
     void Start()
     {
         

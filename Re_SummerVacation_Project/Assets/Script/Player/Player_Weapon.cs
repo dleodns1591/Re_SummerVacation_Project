@@ -18,4 +18,14 @@ public class Player_Weapon : MonoBehaviour
     }
 
     public void MoveTo(Vector3 direction) => Weapon_Direction = direction;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+            
+    }
 }

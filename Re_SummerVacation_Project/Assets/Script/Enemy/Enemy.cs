@@ -18,4 +18,10 @@ public class Enemy : MonoBehaviour
     }
 
     public void MoveTo(Vector3 direction) => Enemy_Direction = direction;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+            Destroy(this.gameObject);
+    }
 }
