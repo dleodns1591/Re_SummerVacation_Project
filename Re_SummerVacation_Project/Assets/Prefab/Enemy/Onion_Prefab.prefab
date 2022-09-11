@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy_Speed: 3
   Enemy_Direction: {x: 0, y: -1, z: 0}
+  Attack: 15
 --- !u!61 &899249204129574888
 BoxCollider2D:
   m_ObjectHideFlags: 0

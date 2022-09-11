@@ -23,7 +23,7 @@ public class Player_Weapon : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject);
+            GameManager.Inst.Score += collision.GetComponent<Enemy>().Score_Point;
             Destroy(this.gameObject);
         }
             

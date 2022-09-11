@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy_Speed: 8
   Enemy_Direction: {x: 0, y: -1, z: 0}
+  Attack: 30
 --- !u!50 &2513280341731329259
 Rigidbody2D:
   serializedVersion: 4

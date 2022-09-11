@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("이동 속도 / 방향")]
     public float Enemy_Speed;
     public Vector3 Enemy_Direction = Vector3.zero;
+
+    [Header("공격력")]
+    public int Attack;
+
+    [Header("스코어")]
+    public int Score_Point;
 
     void Start()
     {
@@ -22,6 +29,14 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            Destroy(this.gameObject);
+        {
+            Player.Inst.TakeDamage(Attack);
+
+            if (this.CompareTag("Enemy"))
+            {
+                GameManager.Inst.Score += Score_Point;
+                Destroy(this.gameObject);
+            }
+        }
     }
 }
