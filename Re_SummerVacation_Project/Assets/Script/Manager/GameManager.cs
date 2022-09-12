@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     {
         Player_CurrentHP = Player_MaxHP;
 
+        if (Score <= 0)
+            Score = 0;
+
         if (Inst == null)
         {
             Inst = this;

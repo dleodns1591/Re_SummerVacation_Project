@@ -46,7 +46,10 @@ public class Enemy : MonoBehaviour
         StartCoroutine(Hit_Color());
 
         if (CurrentHP <= 0)
+        {
+            GameManager.Inst.Score += Score_Point;
             Destroy(this.gameObject);
+        }
     }
 
     private IEnumerator Hit_Color()
@@ -61,12 +64,10 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Player.Inst.TakeDamage(Attack);
+            Destroy(this.gameObject);
 
-            if (this.CompareTag("Enemy"))
-            {
+            if (this.CompareTag("Meteorite"))
                 GameManager.Inst.Score += Score_Point;
-                Destroy(this.gameObject);
-            }
         }
     }
 }

@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -454165073
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1679179802, guid: 477c9da2bca09554cbe459934e362849, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -125,7 +125,7 @@ MonoBehaviour:
   Enemy_Speed: 4
   Enemy_Direction: {x: 0, y: -1, z: 0}
   Attack: 20
-  Score_Point: 0
+  Score_Point: 300
   MaxHP: 12
   CurrentHP: 0
 --- !u!50 &8839928706411610743

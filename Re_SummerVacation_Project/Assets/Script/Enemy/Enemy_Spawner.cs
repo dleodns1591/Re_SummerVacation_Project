@@ -98,6 +98,7 @@ public class Enemy_Spawner : MonoBehaviour
         GameObject Slider_Clone = Instantiate(SliderHP_Prefab);
         Slider_Clone.transform.SetParent(Canvas_Transform);
         Slider_Clone.transform.localScale = Vector3.one;
-        Slider_Clone.GetComponent<Enemy_Slider>().SetUp(Enemy.transform);
+        Slider_Clone.GetComponent<Enemy_Slider>().T_SetUp(Enemy.transform);
+        Slider_Clone.GetComponent<Enemy_Slider>().HP_SetUp(Enemy.GetComponent<Enemy>());
     }
 }
