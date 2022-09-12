@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     [Header("스코어")]
     public float Score;
+    public float EnemyDie_Score;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
+        Key();
     }
 
     private void Awake()
@@ -38,5 +39,13 @@ public class GameManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
+    }
+
+    private void Key()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // 일시정지
+        }
     }
 }

@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
         if (CurrentHP <= 0)
         {
             GameManager.Inst.Score += Score_Point;
+            GameManager.Inst.EnemyDie_Score += 1;
             Destroy(this.gameObject);
         }
     }

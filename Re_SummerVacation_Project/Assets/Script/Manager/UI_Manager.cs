@@ -6,6 +6,7 @@ using TMPro;
 public class UI_Manager : MonoBehaviour
 {
     public TextMeshProUGUI Score_Text;
+    public TextMeshProUGUI EnemyDie_Text;
 
     void Start()
     {
@@ -15,5 +16,6 @@ public class UI_Manager : MonoBehaviour
     void Update()
     {
         Score_Text.text = "Score : " + GameManager.Inst.Score;
+        EnemyDie_Text.text = "EnemyDie : " + GameManager.Inst.EnemyDie_Score;
     }
 }
