@@ -60,6 +60,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(float Damage)
     {
         GameManager.Inst.Player_CurrentHP -= Damage;
+
+        StopCoroutine(Hit_Color());
+        StartCoroutine(Hit_Color());
+
         StartCoroutine(Fade_On());
 
         if (GameManager.Inst.Player_CurrentHP <= 0)
@@ -82,7 +86,9 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-    #region 公利 葛记
+    #region 公利 / 乔秦 葛记
+
+    // 公利 葛记
     public IEnumerator Fade_On()
     {
         circleCollider2D.enabled = false;
@@ -93,6 +99,14 @@ public class Player : MonoBehaviour
             Player_Fade.DOFade(1f, 0.5f);
         }
         circleCollider2D.enabled = true;
+    }
+
+    // 乔秦 葛记
+    public IEnumerator Hit_Color()
+    {
+        Player_Fade.color = Color.red;
+        yield return new WaitForSeconds(0.05f);
+        Player_Fade.color = Color.white;
     }
     #endregion
 }

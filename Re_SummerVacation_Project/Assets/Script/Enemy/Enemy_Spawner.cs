@@ -26,6 +26,10 @@ public class Enemy_Spawner : MonoBehaviour
     public float Min_SpawnTime = 1f;
     public float Max_SpawnTime = 4f;
 
+    [Header("Ã¼·Â")]
+    public GameObject SliderHP_Prefab;
+    public Transform Canvas_Transform;
+
     void Start()
     {
 
@@ -49,22 +53,26 @@ public class Enemy_Spawner : MonoBehaviour
             switch (enemy_Spawn)
             {
                 case Enemy_Spawn.AppleMonster:
-                    Instantiate(Enemy_Kind[2], new Vector3(PositionX, Enemy_StageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
+                    GameObject Enemy_Clone_01 = Instantiate(Enemy_Kind[2], new Vector3(PositionX, Enemy_StageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
+                    Sapwn_EnemySlider(Enemy_Clone_01);
                     break;
 
 
                 case Enemy_Spawn.Onion:
-                    Instantiate(Enemy_Kind[3], new Vector3(PositionX, Enemy_StageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
+                    GameObject Enemy_Clone_02 = Instantiate(Enemy_Kind[3], new Vector3(PositionX, Enemy_StageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
+                    Sapwn_EnemySlider(Enemy_Clone_02);
                     break;
 
 
                 case Enemy_Spawn.Snake:
-                    Instantiate(Enemy_Kind[4], new Vector3(PositionX, Enemy_StageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
+                    GameObject Enemy_Clone_03 = Instantiate(Enemy_Kind[4], new Vector3(PositionX, Enemy_StageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
+                    Sapwn_EnemySlider(Enemy_Clone_03);
                     break;
 
 
                 case Enemy_Spawn.Wolf:
-                    Instantiate(Enemy_Kind[5], new Vector3(PositionX, Enemy_StageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
+                    GameObject Enemy_Clone_04 = Instantiate(Enemy_Kind[5], new Vector3(PositionX, Enemy_StageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
+                    Sapwn_EnemySlider(Enemy_Clone_04);
                     break;
 
 
@@ -73,7 +81,7 @@ public class Enemy_Spawner : MonoBehaviour
 
                     yield return new WaitForSeconds(1.0f);
 
-                    DOTween.KillAll();
+                    DOTween.Kill(Line.Inst.Warning_Line);
                     Destroy(WarningLine);
 
                     Instantiate(Enemy_Kind[0], new Vector3(PositionX, Enemy_StageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
@@ -83,5 +91,13 @@ public class Enemy_Spawner : MonoBehaviour
             yield return new WaitForSeconds(Spawn_Time);
         }
 
+    }
+
+    private void Sapwn_EnemySlider(GameObject Enemy)
+    {
+        GameObject Slider_Clone = Instantiate(SliderHP_Prefab);
+        Slider_Clone.transform.SetParent(Canvas_Transform);
+        Slider_Clone.transform.localScale = Vector3.one;
+        Slider_Clone.GetComponent<Enemy_Slider>().SetUp(Enemy.transform);
     }
 }

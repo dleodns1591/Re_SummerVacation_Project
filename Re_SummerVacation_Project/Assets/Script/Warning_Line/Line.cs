@@ -5,17 +5,18 @@ using DG.Tweening;
 
 public class Line : MonoBehaviour
 {
-    public SpriteRenderer Warning_Line;
+    public static Line Inst { get; private set; }
+    private void Awake() => Inst = this;
 
+    public SpriteRenderer Warning_Line;
 
     void Start()
     {
         StartCoroutine(Coroutine_Line_1());
     }
-    
+
     void Update()
     {
-
     }
 
     private IEnumerator Coroutine_Line_1()

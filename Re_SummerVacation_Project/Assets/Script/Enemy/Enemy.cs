@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
+
     [Header("이동 속도 / 방향")]
     public float Enemy_Speed;
     public Vector3 Enemy_Direction = Vector3.zero;
@@ -13,6 +15,10 @@ public class Enemy : MonoBehaviour
 
     [Header("스코어")]
     public int Score_Point;
+
+    [Header("체력")]
+    public float MaxHP;
+    public float CurrentHP;
 
     void Start()
     {
@@ -24,7 +30,31 @@ public class Enemy : MonoBehaviour
         transform.position += Enemy_Direction * Enemy_Speed * Time.deltaTime;
     }
 
+    private void Awake()
+    {
+        CurrentHP = MaxHP;
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
+    }
+
     public void MoveTo(Vector3 direction) => Enemy_Direction = direction;
+
+    public void TakeDamage(float Damage)
+    {
+        CurrentHP -= Damage;
+
+        StopCoroutine(Hit_Color());
+        StartCoroutine(Hit_Color());
+
+        if (CurrentHP <= 0)
+            Destroy(this.gameObject);
+    }
+
+    private IEnumerator Hit_Color()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

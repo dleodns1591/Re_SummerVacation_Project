@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Player_Weapon : MonoBehaviour
 {
+    [Header("이동 속도 / 방향")]
     public float Weapon_Speed;
     public Vector3 Weapon_Direction = Vector3.zero;
+
+    [Header("공격력")]
+    public int Attack;
 
     void Start()
     {
@@ -23,7 +27,7 @@ public class Player_Weapon : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            GameManager.Inst.Score += collision.GetComponent<Enemy>().Score_Point;
+            collision.GetComponent<Enemy>().TakeDamage(Attack);
             Destroy(this.gameObject);
         }
             

@@ -121,9 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ed8e09be2560242ae24c68275515a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   Enemy_Speed: 8
   Enemy_Direction: {x: 0, y: -1, z: 0}
   Attack: 30
+  Score_Point: 0
+  MaxHP: 0
+  CurrentHP: 0
 --- !u!50 &2513280341731329259
 Rigidbody2D:
   serializedVersion: 4

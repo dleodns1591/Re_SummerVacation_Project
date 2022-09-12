@@ -179,6 +179,8 @@ MonoBehaviour:
   Spawn_Time: 5
   Min_SpawnTime: 1
   Max_SpawnTime: 4
+  SliderHP_Prefab: {fileID: 7744378790501496112, guid: 93c4c8269ef30f04f8e68b3c54376e0e, type: 3}
+  Canvas_Transform: {fileID: 409665945}
 --- !u!1 &383260730
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +560,8 @@ MonoBehaviour:
   Spawn_Time: 2
   Min_SpawnTime: 1
   Max_SpawnTime: 4
+  SliderHP_Prefab: {fileID: 7744378790501496112, guid: 93c4c8269ef30f04f8e68b3c54376e0e, type: 3}
+  Canvas_Transform: {fileID: 409665945}
 --- !u!4 &821302361
 Transform:
   m_ObjectHideFlags: 0
@@ -674,9 +678,9 @@ GameObject:
   - component: {fileID: 1154792290}
   - component: {fileID: 1154792289}
   - component: {fileID: 1154792288}
-  - component: {fileID: 1154792291}
   - component: {fileID: 1154792293}
   - component: {fileID: 1154792292}
+  - component: {fileID: 1154792294}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -743,7 +747,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -593439769
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1083896706, guid: 4c061f19cc7293b4ca24c161967ad652, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -771,26 +775,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1154792291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154792287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d141aa9ea2b980f4b9ea646c1dccbb21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StageData: {fileID: 11400000, guid: 80899b03a7b146147ada6a44dab6aa1f, type: 2}
-  Move_Speed: 7
-  MoveDirection: {x: 0, y: 0, z: 0}
-  Weapon_Prefab: {fileID: 3880097028291264569, guid: 8e28e80de7065ff4e81d07092ff98648, type: 3}
-  Weapon_Speed: 0.2
-  Player_Fade: {fileID: 1154792289}
-  circleCollider2D: {fileID: 1154792293}
-  HP_Slider: {fileID: 872125105}
 --- !u!50 &1154792292
 Rigidbody2D:
   serializedVersion: 4
@@ -828,6 +812,26 @@ CircleCollider2D:
   m_Offset: {x: 0.011379387, y: 0.44}
   serializedVersion: 2
   m_Radius: 1.5467643
+--- !u!114 &1154792294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154792287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d141aa9ea2b980f4b9ea646c1dccbb21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StageData: {fileID: 11400000, guid: 80899b03a7b146147ada6a44dab6aa1f, type: 2}
+  Move_Speed: 7
+  MoveDirection: {x: 0, y: 1, z: 0}
+  Weapon_Prefab: {fileID: 3880097028291264569, guid: 8e28e80de7065ff4e81d07092ff98648, type: 3}
+  Weapon_Speed: 0.2
+  Player_Fade: {fileID: 1154792289}
+  circleCollider2D: {fileID: 1154792293}
+  HP_Slider: {fileID: 872125105}
 --- !u!1 &1354574225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1406,8 @@ MonoBehaviour:
   Spawn_Time: 5
   Min_SpawnTime: 1
   Max_SpawnTime: 4
+  SliderHP_Prefab: {fileID: 7744378790501496112, guid: 93c4c8269ef30f04f8e68b3c54376e0e, type: 3}
+  Canvas_Transform: {fileID: 409665945}
 --- !u!4 &2010529982
 Transform:
   m_ObjectHideFlags: 0
